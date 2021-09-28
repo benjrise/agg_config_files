@@ -1,0 +1,27 @@
+connection:
+  info:
+    ip: 127.0.0.1
+    port: 5000
+    tls_config:
+      enable: 'false'
+  name: FlaskConnection
+  path: ibmfl.connection.flask_connection
+  sync: 'False'
+fusion:
+  name: IterAvgFusionHandler
+  path: ibmfl.aggregator.fusion.iter_avg_fusion_handler
+hyperparams:
+  global:
+    num_parties: 2
+    perc_quorum: 1
+    rounds: 10
+    termination_accuracy: 0.9
+  local:
+    optimizer:
+      lr: 0.01
+    training:
+      epochs: 1
+      steps_per_epoch: 390
+protocol_handler:
+  name: ProtoHandler
+  path: ibmfl.aggregator.protohandler.proto_handler
